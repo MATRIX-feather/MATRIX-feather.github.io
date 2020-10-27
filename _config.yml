@@ -18,7 +18,7 @@ minimal_mistakes_skin    : "dirt" # "air", "aqua", "contrast", "dark", "dirt", "
 locale                   : "zh"
 title                    : "咕咕毛的小窝"
 title_separator          : "|"
-subtitle                 : "?" # site tagline that appears below site title in masthead
+subtitle                 : "" # site tagline that appears below site title in masthead
 name                     : "黯夜之翎"
 description              : ""
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -135,7 +135,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/MATRIX-feather"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -145,6 +145,12 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
+    - label: "Bilibili"
+      icon: "fas fa-fw fa-globe-asia"
+      url: "https://space.bilibili.com/305637715"
+    - label: "友链: A_M_D"
+      icon: "fas fa-fw fa-globe-asia"
+      url: "https://space.bilibili.com/1399781/"
 
 
 # Reading Files
