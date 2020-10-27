@@ -11,8 +11,8 @@ header:
   teaser: /assets/Images/Header/1.jpg
   #caption: "水印: [**源**](https:/lcoalhost)"
 ---
-**注意!**此文档为静态页面，请尝试通过**浏览器强制刷新(一般为Ctrl+F5)**来查看最新内容
-{: .notice--warning}
+此文档会随着项目变更滚动更新，在每一次汉化版更新后开始记录，在记录的版本被推送至stable后清空。推荐使用**强制刷新(一般为Ctrl+F5)**来查看最新内容。
+{: .notice--info}
 
 # **▪ Android**
 
