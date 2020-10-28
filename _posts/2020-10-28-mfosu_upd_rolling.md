@@ -64,7 +64,19 @@ header:
 
 `cb8fc98` - 优化`BackgroundStoryBoardLoader`加载故事版的流程
 
+`89ddf44` - 修复在点击`桌面背景模式`按钮后收藏夹按钮异常的问题
+
+`3019bc3` - 修复commit `89ddf44`导致的新bug
+
+`3019bc3` - `CollectionSelectPanel`: 添加关闭按钮
+
+`3019bc3` - 移动`collectionPanel`到`Content Container`中
+
+`dec1c0e` - 修复故事版加载bug
+
 # **▪ Bug/Todo**
 
 ## **▪ Mvis播放器**
-- **bug** - 在故事版未完全加载时更换谱面会导致已加载的故事版贴图不会自动释放直到退出mvis播放器界面
+- ~~**bug** - 在故事版未完全加载时更换谱面会导致已加载的故事版贴图不会自动释放直到退出mvis播放器界面~~ (已在`dec1c0e`修复)
+- **bug** - 在快速换曲时, 故事版会有几率留在`BackgroundStoryboardLoader`中
+- **牢骚** - 这故事版我咋就怎么整都整不好呢(´・_・`)
