@@ -135,7 +135,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/MATRIX-feather"
+      url: "https://github.com/MATRIX-feather/MATRIX-feather.github.io"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
