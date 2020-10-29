@@ -14,6 +14,9 @@ header:
 此文档会随着项目变更滚动更新，在每一次汉化版更新后开始记录，在记录的版本被推送至stable后清空。推荐使用**强制刷新(一般为Ctrl+F5)**来查看最新内容。
 {: .notice--info}
 
+合并上游代码的提交一般不会记录，除非该提交包含了汉化版的几处改动
+{: .notice--info}
+
 # **▪ Android**
 
 `aaa98b8` - 修复*M.Resources*在打开*osu.Android*时报错找不到的问题
@@ -23,6 +26,10 @@ header:
 `0274901` - 移除tau残留文件
 
 `df26cdb` - 将*osu!mania*模式设置中的*下落时间*翻译更改为*下落速度*
+
+`d92bc5e` - 合并上游分支
+
+`d92bc5e` - 更改了`BeatmapListing`的几处翻译(向web看齐)
 
 # **▪ Mvis播放器**
 
@@ -72,7 +79,7 @@ header:
 
 `3019bc3` - 移动`collectionPanel`到`Content Container`中
 
-`dec1c0e` - 修复故事版加载bug
+`dec1c0e`, `b28b11d` - 修复故事版加载bug
 
 # **▪ Bug/Todo**
 
