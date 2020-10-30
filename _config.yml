@@ -95,8 +95,8 @@ analytics:
 author:
   name             : "翎"
   avatar           : "/assets/0635cd2a1cb9847663840775898f2406f03e4fb6.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "今天的事情，以后再去做吧?"
-  location         : "Somewhere"
+  bio              : "咸鱼一条"
+  location         : "安徽"
   email            :
   links:
     - label: "Email"
