@@ -96,7 +96,7 @@ header:
 
 `1aabb49` - `HoverableProgressBarContainer`: 与界面中其他元素的主题色保持一致
 
-现在整个mvis界面除了`CollectionPanel`和`CollectionInfo`有一部分没弄以外其他地方的主题色都一致了，这两个我还没想好要如何配主题色(如何用一个主题色表示选中、激活和不可用这三种状态)
+~~现在整个mvis界面除了`CollectionPanel`和`CollectionInfo`有一部分没弄以外其他地方的主题色都一致了，这两个我还没想好要如何配主题色(如何用一个主题色表示选中、激活和不可用这三种状态)~~
 {: .notice--info}
 
 `1aabb49` - 将单曲循环和歌曲进度按钮主体分离至单独的文件中，移除原有的`BottomBarSongProgressInfo`
@@ -109,12 +109,27 @@ header:
 
 `6631edc` - `OverlayColourProvider`: 添加Mvis主题色
 
-暂时和Blue1是一样的, 正在研究如何实现自定义主题色
+~~暂时和Blue1是一样的, 正在研究如何实现自定义主题色~~
 {: .notice--info}
 
 `6631edc` - 将主题色改为`OverlayColourScheme.Mvis`
 
 `6631edc` - `SidebarContainer`: 修复因界面缩放导致界面残留在屏幕上的bug
+
+`e3c3e0a & 225db8f` - **实现Mvis自定义主题色功能**
+
+__颜色返回逻辑和配色方面，`CustomColourProvider`是基于`OverlayColourProvider`更改来的，主要是想让播放器界面和osu!其他界面的观尽可能保持一致。<br>
+__原本的想法是根据RGB返回颜色，但因为暂时没有想出从RGB直接转换亮度、饱和度的方法~~(我懒)~~，就暂时搁置了<br>
+__并且由于`OverlayColourProvider`根据色相返回颜色的逻辑，直接从RGB是没办法的。<br>
+__所以现在自定义颜色的实现方案是先从配置获取用户给予的颜色(RGB)，然后用`Color4.ToHsl(R,G,B,1).X`获取对应的色相，再赋值给`HueColour`<br>
+__接着颜色被其他组件调用时，由于`HueColour`的值已被改变，返回的就是更新后的颜色了。
+{: .notice--info}
+
+# **▪ 主界面**
+`e3c3e0a` - 不要预加载`MvisScreen`
+
+暂时用以解决在主界面设置完主题色后进入播放器，播放器界面颜色不更改的问题
+{: .notice--info}
 
 # **▪ MfConfigManager**
 `1aabb49` - 添加3个设置键
@@ -122,5 +137,5 @@ header:
   - `MvisInterfaceGreen` - 界面主题色(蓝)
   - `MvisInterfaceBlue` - 界面主题色(绿)
 
-暂时不会用到，但之后就说不定了。
+~~暂时不会用到，但之后就说不定了。~~
 {: .notice--info}
