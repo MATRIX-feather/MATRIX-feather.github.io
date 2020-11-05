@@ -20,8 +20,6 @@ header:
 
 # **▪ 项目维护**
 
-`d59ada1` - `MvisScreen`: 解决commit `a425a17`导致的代码缩进问题
-
 `1aabb49` - `BeatmapList`: 移除多余的注释
 
 `1aabb49` - `MvisScreen`: 将`colourProvider`标记为`[Cached]`
@@ -33,6 +31,10 @@ header:
 `1aabb49` - `CollectionSelectPanel`: 移除对`OverlayColourProvider`的依赖
 
 `6631edc` - `OverlayColourProvider`: 移除不再需要的配色方案
+
+`ccb1583` - `MvisScreen`: 调整`colourProvider.HueColour.BindValueChanged()`的位置
+
+`32fb57f` - `CollectionSelectPanel`: 添加对`MvisScreen.CollectionHelper`的依赖
 
 # **▪ Mvis播放器**
 
@@ -96,7 +98,7 @@ header:
 
 `1aabb49` - `HoverableProgressBarContainer`: 与界面中其他元素的主题色保持一致
 
-~~现在整个mvis界面除了`CollectionPanel`和`CollectionInfo`有一部分没弄以外其他地方的主题色都一致了，这两个我还没想好要如何配主题色(如何用一个主题色表示选中、激活和不可用这三种状态)~~
+~~现在整个mvis界面除了`CollectionPanel`和`CollectionInfo`有一部分没弄以外其他地方的主题色都一致了，这两个我还没想好要如何配主题色(如何用一个主题色表示选中、激活和不可用这三种状态)~~(已解决)
 {: .notice--info}
 
 `1aabb49` - 将单曲循环和歌曲进度按钮主体分离至单独的文件中，移除原有的`BottomBarSongProgressInfo`
@@ -109,7 +111,7 @@ header:
 
 `6631edc` - `OverlayColourProvider`: 添加Mvis主题色
 
-~~暂时和Blue1是一样的, 正在研究如何实现自定义主题色~~
+~~暂时和Blue1是一样的, 正在研究如何实现自定义主题色~~(已在`e3c3e0a & 225db8f`解决)
 {: .notice--info}
 
 `6631edc` - 将主题色改为`OverlayColourScheme.Mvis`
@@ -118,24 +120,47 @@ header:
 
 `e3c3e0a & 225db8f` - **实现Mvis自定义主题色功能**
 
-__颜色返回逻辑和配色方面，`CustomColourProvider`是基于`OverlayColourProvider`更改来的，主要是想让播放器界面和osu!其他界面的观尽可能保持一致。<br>
-__原本的想法是根据RGB返回颜色，但因为暂时没有想出从RGB直接转换亮度、饱和度的方法~~(我懒)~~，就暂时搁置了<br>
-__并且由于`OverlayColourProvider`根据色相返回颜色的逻辑，直接从RGB是没办法的。<br>
-__所以现在自定义颜色的实现方案是先从配置获取用户给予的颜色(RGB)，然后用`Color4.ToHsl(R,G,B,1).X`获取对应的色相，再赋值给`HueColour`<br>
-__接着颜色被其他组件调用时，由于`HueColour`的值已被改变，返回的就是更新后的颜色了。
-{: .notice--info}
+`225db8f` - **使播放器界面元素可以根据设置实时调整主题色**
+
+`eb0e774` - 使播放器界面元素可以根据设置实时调整主题色
+
+`ccb1583` - `BottomBarButton`: 移除BorderColour，重新添加阴影效果
+
+`ccb1583` - 更改`HoverableProgressBarContainer`的背景色
+
+`ccb1583` - `CollectionInfo`: 让`flashBox`在清除信息时转变颜色至`colourProvider.Light2`而非`Colour4.Gray`
+
+`ccb1583` - `MvisScreen`: 修复当侧边栏弹出时进入桌面背景模式再退出会导致需要点按两次播放器设置侧边栏才会弹出的bug
+
+`3209a6e` - `BottomBarButton`: 削弱按钮被按下时的视觉效果，修复点按后`flashBox`没有正确淡化的bug
+
+`3209a6e` - `BottomBarOverlayLockSwitchButton && ToggleLoopButton.cs`: 恢复点击动画
+
+`f26bf84` - `BottomBarButton`: 优化`ColourProvider`的赋值逻辑，移除`ExtraDrawable`
+
+`f26bf84` - `SongProgressButton`: 依赖`MusicController`而非`IBindable<WorkingBeatmap>`
+
+`f26bf84` - 简化低栏歌曲进度条的结构，用`fill.ResizeWidthTo(...)`取代原来的`fill.Width = ...`
+
+`32fb57f` - 将`CollectionHepler`添加到`DependencyContainer`中
+
+`32fb57f` - `CollectionSelectPanel`: 缩短收藏夹封面图和谱面列表封面图的加载延迟
 
 # **▪ 主界面**
 `e3c3e0a` - 不要预加载`MvisScreen`
 
-暂时用以解决在主界面设置完主题色后进入播放器，播放器界面颜色不更改的问题
+~~暂时用以解决在主界面设置完主题色后进入播放器，播放器界面颜色不更改的问题~~(已在`ccb1583`中解决)
 {: .notice--info}
+
+`ccb1583` - 预加载`MvisScreen`
+
+# **▪ 设置**
+`eb0e774` - 修复`播放器界面主题色预览`中的色相计算bug
+
+`ccb1583` - 将`播放器界面主题色预览`左右两端与其他元素对齐
 
 # **▪ MfConfigManager**
 `1aabb49` - 添加3个设置键
   - `MvisInterfaceRed` - 界面主题色(红)
-  - `MvisInterfaceGreen` - 界面主题色(蓝)
-  - `MvisInterfaceBlue` - 界面主题色(绿)
-
-~~暂时不会用到，但之后就说不定了。~~
-{: .notice--info}
+  - `MvisInterfaceGreen` - 界面主题色(绿)
+  - `MvisInterfaceBlue` - 界面主题色(蓝)
