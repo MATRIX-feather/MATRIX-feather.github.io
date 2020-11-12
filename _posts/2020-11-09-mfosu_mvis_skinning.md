@@ -30,11 +30,7 @@ excerpt: "音乐播放器皮肤手册"
 | MPlayer-foreground  | 暂不支持 | 1366*768 | 屏幕中心 | 根据较小的一边缩放以填充屏幕 |
 
 更多信息:
-  - 该材质将会覆盖在故事版和M-vis播放器面板的上方。
-  - `.jpg`、`.png`都可以(只要lazer支持)
-  
-个人建议：
-  - 制作前景时可以根据自身需要在左右两边各多弄一些，这样在显示工具栏(顶栏)时能让前景看上去更自然些_(:3 」∠)_
+  - 该材质将会覆盖在故事版和M-vis播放器面板的上方
 
 ## 底栏背景
 `MBottomBar-background`
@@ -76,6 +72,8 @@ excerpt: "音乐播放器皮肤手册"
 
 `MButtonWide-background`
 
+![ ](/assets/Images/Posts/mvis-skinning/bb_wide.png){: .align-center}
+
 | 材质名 | 支持动画  | 建议大小(SD) | 位置 | 缩放方式 |
 | :----: | :----: | :----: | :----: | :----: |
 | MButtonWide-background | 暂不支持 | 无(5:3图像即可) | 左上角 | 根据较大的一边缩放以填充空间 |
@@ -86,6 +84,8 @@ excerpt: "音乐播放器皮肤手册"
 
 ## 底栏歌曲进度按钮背景
 `MButtonProgressOff-background`、`MButtonProgressOn-background`
+
+![ ](/assets/Images/Posts/mvis-skinning/bb_progress.png){: .align-center}
 
 | 材质名 | 支持动画  | 建议大小(SD) | 位置 | 缩放方式 |
 | :----: | :----: | :----: | :----: | :----: |
