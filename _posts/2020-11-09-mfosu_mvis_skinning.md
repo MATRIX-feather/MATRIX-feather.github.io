@@ -1,7 +1,7 @@
 ---
 tags:
     - "mfosu"
-title: "mfosu Mvis音乐播放器皮肤制作"
+title: "mfosu Mvis音乐播放器皮肤指南"
 categories:
     - "mfosu"
 excerpt: "音乐播放器皮肤手册"
@@ -89,8 +89,8 @@ excerpt: "音乐播放器皮肤手册"
 
 | 材质名 | 支持动画  | 建议大小(SD) | 位置 | 缩放方式 |
 | :----: | :----: | :----: | :----: | :----: |
-| 关: MButtonProgressOff-background | 暂不支持 | (≥110)*30 | 左上角 | 不缩放 |
-| 开: MButtonProgressOn-background | 暂不支持 | (≥110)*30 | 左上角 | 不缩放 |
+| 关: MButtonProgressOff-background | 暂不支持 | (≥110)*30 | 左上角 | **不缩放** |
+| 开: MButtonProgressOn-background | 暂不支持 | (≥110)*30 | 左上角 | **不缩放** |
 
 更多信息:
   - 见[底栏标准按钮背景](#底栏标准按钮背景)
@@ -129,7 +129,7 @@ excerpt: "音乐播放器皮肤手册"
 
 | 材质名 | 支持动画  | 建议大小(SD) | 位置 | 缩放方式 |
 | :----: | :----: | :----: | :----: | :----: |
-| MButtonRefreshCollection-background | 暂不支持 | 无(≥3:1图像即可) | 右下角 | 伸缩整张图片以填充空间 |
+| MButtonRefreshCollection-background | 暂不支持 | 无(≥3:1图像即可) | 右下角 | 根据较大的一边缩放以填充空间 |
 
 更多信息:
   - 见[底栏标准按钮背景](#底栏标准按钮背景)
