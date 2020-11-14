@@ -4,7 +4,7 @@ tags:
     - "更新日志"
 title: "mfosu更新日志"
 categories:
-    - "日常"
+    - "daily"
 excerpt: "暂无描述"
 header:
   image: /assets/Images/Header/1.jpg

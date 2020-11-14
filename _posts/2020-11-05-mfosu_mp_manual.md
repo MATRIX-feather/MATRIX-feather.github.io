@@ -3,7 +3,7 @@ tags:
     - "mfosu"
 title: "mfosu音乐播放器使用手册"
 categories:
-    - "日常"
+    - "mfosu"
 excerpt: "音乐播放器使用手册"
 #header:
 #  image: /assets/Images/Header/1.jpg
