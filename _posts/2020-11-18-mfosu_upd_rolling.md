@@ -1,0 +1,92 @@
+---
+tags:
+    - "osu"
+    - "更新日志"
+title: "mfosu更新日志"
+categories:
+    - "daily"
+excerpt: "暂无描述"
+header:
+  image: /assets/Images/Header/1.jpg
+  teaser: /assets/Images/Header/1.jpg
+  #caption: "水印: [**源**](https:/lcoalhost)"
+
+gallery:
+  - url: /assets/Images/Posts/mfosu_upd_rolling/1.png
+    image_path: /assets/Images/Posts/mfosu_upd_rolling/1.png
+  - url: /assets/Images/Posts/mfosu_upd_rolling/2.jpg
+    image_path: /assets/Images/Posts/mfosu_upd_rolling/2.jpg
+---
+此文档会随着项目变更滚动更新，在每一次汉化版更新后开始记录，在记录的版本被推送至stable后清空。推荐使用**强制刷新(一般为Ctrl+F5)**来查看最新内容。<br>
+[2020.1109.0 已同步更新](/mfosu_update_log/mfosu_20201109_update)
+{: .notice--info}
+
+合并上游代码的提交一般不会记录，除非该提交包含了汉化版的改动
+{: .notice--info}
+
+## 杂项
+`22f07f8` - 移除`TimeOverlay`，并简化工具栏时间按钮的更新逻辑
+
+`8e6e4e0` - 降低工具栏时间按钮的文本更新频率
+从之前每次更新都刷新一次时间变为加载完成后每半秒刷新一次时间
+{: .notice--info}
+
+`9aa6197` - **添加osu!启动时间和当前谱面数量的数据显示**
+{% include gallery caption="对比stable" %}
+~~*其实就是模仿stable做的*~~
+
+`d93c08a` - 优化因工具栏时间按钮刷新谱面数量导致的卡顿
+
+`4141160` - 缩小默认字号至18
+
+`9481827` - 移除选歌界面`Footer`和`FilterControl`的背景三角动画
+
+`f926ccf` - 修复`BeatmapInfoWedge`中歌曲信息字体大小不一致的问题
+
+## 项目维护
+`830704e` - 对`osu.Game.Tests`进行代码格式化
+
+`21bbac8` - 移动`TestSceneMvisScreen`至`Visual/Mvis/TestSceneMvisScreen`
+
+`21bbac8` - 添加侧边栏的TestScene
+
+## Mvis播放器
+`b6256a7` - 优化故事版加载失败时的处理方式
+
+`6ce050c` - 修复底栏背景能伸出容器的bug
+
+`9aa6197` - 调整侧边栏收藏夹谱面背景的未知
+
+`9aa6197` - 让`UpdateableBeatmapBackground`使用`Cover`而不是`BeatmapBackground`
+
+少用个BufferedContainer在我的老电脑上居然带来了50多帧的提升...~~要不把歌曲信息的模糊效果也去掉吧，那玩意也是个依赖BufferedContainer的家伙~~
+{: .notice}
+
+`b8dcd43` - **添加侧边栏Header**
+
+![?](/assets/Images/Posts/mfosu_upd_rolling/3.gif)
+
+`77e3e6a` - 调整侧边栏Header样式及动画
+
+`33c8741` - 修复从选歌界面切换回播放器界面时，即使谱面没有变动，故事版仍会重新加载的bug
+
+`e976424` - 调整侧边栏内容添加方式
+
+`e061df9` - 将侧边栏`resizeFor`改为`ShowComponent`
+
+`e061df9` - 如果要侧边栏显示的`Drawable`不在`components`中或不是`ISidebarContent`，则抛出异常
+
+`21bbac8` - 简化侧边栏组件
+
+`21bbac8` - 修复在某些情况下切歌会导致收藏夹图谱面板不正确滚动的bug
+
+`21bbac8` - `MusicAmplitudesProvider`: 添加对`MusicController`的依赖
+
+`21bbac8` - 如果要显示的侧边栏组件高度小于0.3，则抛出异常
+
+`21bbac8` - 修复当调用侧边栏的`Clear()`和`Remove()`后，相关标签依旧残留的问题
+
+`4141160` - 调整侧边栏标签的动画效果
+
+`f926ccf` - **在Discord中显示当前正在播放的歌曲**
+![好耶](/assets/Images/Posts/mfosu_upd_rolling/4.png)
