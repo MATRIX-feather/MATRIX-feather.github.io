@@ -94,7 +94,7 @@ analytics:
 # Site Author
 author:
   name             : "翎"
-  avatar           : "/assets/0635cd2a1cb9847663840775898f2406f03e4fb6.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/avatar.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "咸鱼一条"
   location         : "安徽"
   email            :
