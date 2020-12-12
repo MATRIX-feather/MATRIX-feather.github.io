@@ -29,7 +29,7 @@ header:
 - **添加osu!CursorDance**
 
 来自[TechnoJo4/osu](https://github.com/TechnoJo4/osu)<br>
-同样看看[PercyDan54/osu](https://github.com/PercyDan54/osu/tree/custom)的CorsorDance！
+同样看看[PercyDan54/osu](https://github.com/PercyDan54/osu/tree/custom)的CursorDance！
 {: .notice--info}
 
 ## 52ff8d3
