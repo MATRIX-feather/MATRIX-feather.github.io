@@ -1,0 +1,88 @@
+---
+tags:
+    - "osu"
+    - "更新日志"
+title: "mfosu更新日志"
+categories:
+    - "daily"
+excerpt: "暂无描述"
+header:
+  image: /assets/Images/Header/1.jpg
+  teaser: /assets/Images/Header/1.jpg
+  #caption: "水印: [**源**](https:/lcoalhost)"
+---
+此文档会随着项目变更滚动更新，在每一次汉化版更新后开始记录，在记录的版本被推送至stable后清空。推荐使用**强制刷新(一般为Ctrl+F5)**来查看最新内容。<br>
+
+当前的插件兼容性版本为: **3**
+
+[2021.502.0 已同步更新](/mfosu_update_log/mfosu_20210502_upd)
+{: .notice--info}
+
+## 9c92523
+### BeatmapMetadataDisplay
+- 优化动画
+![ ](/assets/Images/Posts/rolling/gif1.gif){: .align-center}
+![ ](/assets/Images/Posts/rolling/gif2.gif){: .align-center}
+
+## 23aac5a
+### Mvis本体
+- 简化界面实现<br>
+*(只移除了一个容器)*
+
+### BackgroundStoryboardLoader
+- **为有光敏性癫痫警告的谱面显示警告**<br>
+*若某张谱面存在光敏性癫痫警告，则该警告将从切换到该谱面时开始显示，故事版加载完成5秒后淡出*
+
+### OsuMusicControllerWrapper
+- 补全描述和作者信息
+
+### PlayerLoader
+- 修复IDE警告
+
+## c1cb0dd
+### Mvis本体
+- 调整OnBeatmapChanged用法以简化相关插件实现
+
+新的用法和`Bindable`中`BindValueChanged()`的用法类似。
+如果您之前处理OnBeatmapChanged使用的是类似于下面的方法:
+{: .notice--info}
+``````C#
+...
+MvisScreen.OnBeatmapChanged += onBeatmapChanged;
+
+if (MvisScreen.Beatmap.Value != currentWorkingBeatmap)
+    onBeatmapChanged(MvisScreen.Beatmap.Value);
+...
+return base.Enable();
+``````
+{: .notice--info}
+那么您现在可以这么写以简化实现(如果PostInit中没有用到谱面有关的数据):
+{: .notice--info}
+``````C#
+...
+bool result = base.Enable();
+MvisScreen?.OnBeatmapChanged(onBeatmapChanged, this, true);
+...
+
+return result;
+``````
+{: .notice--info}
+
+其中, `onBeatmapChanged`对应你要用来处理此事件的函数，`this`对应插件本体，`true`对应是否要立即执行。
+{: .notice--info}
+
+如果插件已经注册了一个处理谱面变动的函数，那么下次调用`OnBeatmapChanged`时，如果函数和已注册的一致并且设置为立即执行，那么该函数将被立即执行一次而不是抛出"xxx已经注册过一个相同的xxx了"的异常
+{: .notice--info}
+
+### MvisPluginManager
+- 提升插件兼容性版本至4
+
+任何使用了MvisScreen版本3中`Action<WorkingBeatmap> OnBeatmapChanged`的插件都将报错
+{: .notice--info}
+
+### LyricPlugin、CollectionHelper、FakeEditor、YaspPlugin
+- 适应变动
+
+### RulesetPanel
+- 适应变动
+- **优化实现方式，根据情况选择是否跟随播放器更新内容**
