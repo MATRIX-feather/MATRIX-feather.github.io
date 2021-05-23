@@ -86,3 +86,75 @@ return result;
 ### RulesetPanel
 - 适应变动
 - **优化实现方式，根据情况选择是否跟随播放器更新内容**
+
+## 45317bd
+### CloudMusicSupport
+- 修复歌词编辑和插件本体不同步的问题
+- 修复LyricLine小概率报错问题
+
+## 3bdc981
+### 杂项
+- 在osu.Desktop中添加对CloudMusicSupport的引用
+
+为了调试方便，在lrcEdit中移除了对CloudMusicSupport的引用
+{: .notice--info}
+
+## 7bd57e3
+### Mvis本体
+- **添加按钮点击涟漪(ripple)效果**<br>
+![ ](/assets/Images/Posts/rolling/gif3.gif){: .align-center}
+
+因为o!f奇妙的遮罩实现方式，我目前只能用Sprite而不是Circle来实现涟漪效果。
+{: .notice--info}
+
+- 更改播放器设置按钮图标
+- 将播放器设置按钮更名为"侧边栏(播放器设置)"
+- 使侧边栏按钮显示当前侧边栏弹出情况
+- 允许`BottomBarSwitchButton`单独调整自己的值
+- 简化侧边栏相关实现
+
+### CollectionSupport
+- 更改底栏按钮图标
+
+## 97b69b7
+### CloudMusicSupport
+- 修复刷新后歌词不显示的问题
+
+### Mvis本体
+- 优化插件禁用时的提示
+
+## a4d1386
+### Mvis本体
+- 调整按钮点击涟漪的动画时长
+
+## 70137a7
+### Mvis本体
+- 配色调整
+- 继续优化插件禁用时的提示
+
+### CloudMusicSupport、CollectionSupport
+- 适应变更
+
+## 54af605
+### Mvis本体
+- 设置音乐控制插件时自动禁用歌曲选择
+- 继续调整配色
+
+更换新配色的原因是我希望侧边栏部分能更突出当前的主题色
+{: .notice--info}
+
+### CollectionSupport
+- 在第一次选择收藏夹时请求接手音频控制
+
+或许这个请求只应该出现一次然后在配置里禁用?
+{: .notice--info}
+
+### CloudMusicSupport
+- 更改Depth至-1以确保歌词可以显示在面板(Mvis2Player)上方
+
+### 其他
+- 调整ConfirmDialog的翻译文本
+
+## 6ca28ea
+### Mvis本体
+- 禁用底栏背景图的Masking
